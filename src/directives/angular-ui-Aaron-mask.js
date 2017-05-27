@@ -144,7 +144,6 @@
                      * （4）$transclude，嵌入链接函数，实际被执行用来克隆元素和操作DOM的函数
                      */
                     return function (scope, iElement, iAttrs, controller) {
-                        console.log(maskConfig);
                         /**----------------------------------当前指令常用方法--------------------------------**/
                         /**
                          * 判断是否为空字符串
@@ -363,7 +362,7 @@
                          */
                         inputAliasesObj[inputAliases[0]] = {
                             alias: "numeric",
-                            placeholder: '',
+                            placeholder: placeholder,
                             allowPlus: allowPlus,
                             allowMinus: allowMinus,
                             'digits': digits,

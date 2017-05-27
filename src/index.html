@@ -6,8 +6,31 @@
 </head>
 <body>
 
-<div ng-app="app">
-    <input type="text" zm-mask="RMB">
+<div ng-app="app" ng-controller="appCtrl">
+    <div ng-if='flagFF'>
+        <label>
+            <input type="text" ng-model="money" zm-mask="money" zm-mask-minimum="{{minimum}}"
+                   zm-mask-maximum="{{maximum}}">
+        </label>
+        <p>money:{{money}}</p>
+        <label>
+            <input type="text" ng-model="rmb" zm-mask="RMB" zm-mask-minimum="{{minimum}}" zm-mask-maximum="{{maximum}}">
+        </label>
+        <p>RMB:{{rmb}}</p>
+        <label>
+            <input type="text" ng-model="usd" zm-mask="USD" zm-mask-minimum="{{minimum}}" zm-mask-maximum="{{maximum}}">
+        </label>
+        <p> USD:{{usd}}</p>
+    </div>
+    <p>
+        <label>
+            最小值：<input type="text" zm-mask="myNum" ng-model="minimum">
+        </label>
+        <label>
+            最大值：<input type="text" zm-mask="myNum" zm-mask-options="options" ng-model="maximum">
+        </label>
+        <button ng-click="submitBtn($event)">提交</button>
+    </p>
 </div>
 
 <script src="../node_modules/jquery/dist/jquery.js"></script>
@@ -18,7 +41,26 @@
 <script src="../node_modules/angular/angular.min.js"></script>
 <script src="./directives/angular-ui-Aaron-mask.js"></script>
 <script>
-    var app = angular.module('app', ['zm.mask'])
+    var app = angular.module('app', ['zm.mask']).controller('appCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
+        $scope.money = 0;
+        $scope.rmb = 0;
+        $scope.usd = 0;
+        $scope.minimum = '';
+        $scope.maximum = '';
+        $scope.flagFF = true;
+        $scope.options = {
+            digits: 2
+        };
+        $scope.submitBtn = function (e) {
+            if ($scope.flagFF) {
+                $scope.flagFF = false;
+                $timeout(function () {
+                    $scope.flagFF = true;
+                })
+            }
+        };
+
+    }])
 </script>
 </body>
 </html>
