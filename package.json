@@ -1,0 +1,19 @@
+{
+  "name": "angular-ui-Aaron-mask",
+  "version": "1.0.0",
+  "author": "Aaron",
+  "license": "",
+  "homepage": "https://github.com/zhangming123456/angular-ui-Aaron-mask",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "inputmask": "^3.3.6",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhangming123456/angular-ui-Aaron-mask.git"
+  }
+}

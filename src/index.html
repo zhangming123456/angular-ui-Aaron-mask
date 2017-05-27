@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div ng-app="app">
+    <input type="text" zm-mask="RMB">
+</div>
+
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="../node_modules/inputmask/dist/jquery.inputmask.bundle.js"></script>
+<script src="../node_modules/inputmask/dist/inputmask/phone-codes/phone.js"></script>
+<script src="../node_modules/inputmask/dist/inputmask/phone-codes/phone-be.js"></script>
+<script src="../node_modules/inputmask/dist/inputmask/phone-codes/phone-ru.js"></script>
+<script src="../node_modules/angular/angular.min.js"></script>
+<script src="./directives/angular-ui-Aaron-mask.js"></script>
+<script>
+    var app = angular.module('app', ['zm.mask'])
+</script>
+</body>
+</html>
